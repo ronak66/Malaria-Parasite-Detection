@@ -2,8 +2,8 @@ import cv2
 
 class FeatureEngineering:
 
-    def find_contours_and_centers(img_input):
-        contours_raw, hierarchy = cv2.findContours(img_input, cv2.RETR_TREE,cv2.CHAIN_APPROX_SIMPLE)
+    def find_contours_and_centers(self,img_input):
+        img, contours_raw, hierarchy = cv2.findContours(img_input, cv2.RETR_TREE,cv2.CHAIN_APPROX_SIMPLE)
         contours = [i for i in contours_raw]
         contour_centers = []
         

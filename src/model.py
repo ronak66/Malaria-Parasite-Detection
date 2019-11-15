@@ -27,9 +27,9 @@ class BlobDetectionModel:
         count = 0
         total = 0
         for i in range(len(self.image_list)):
-            im_processed = PP.preprocess(self.dataset[i])
-            y = self.predict(self.dateset[i])
+            im_processed = self.PP.preprocess(self.image_list[i])
+            y = self.predict(self.image_list[i])
             if(y == self.image_labels[i]):
                 count+=1
             total += 1
-        print(count/total)
+        return(count/total)
