@@ -6,7 +6,7 @@ import cv2
 class DataHandling:
 
     @staticmethod
-    def load_dataset(path, classes,start=0, amount=500):
+    def load_dataset(path, classes,start=0, amount=1000):
         count=0
         class_images = []
         for cls in classes :

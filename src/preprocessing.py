@@ -24,7 +24,7 @@ class PreProcessing:
         return gray
 
     def preprocess(self,image):
-        i1 = self.change_contrast(image,1.97,17)
+        i1 = self.change_contrast(image,1.7,15)
         i2 = self.image_cleanup(i1)
         img = self.remove_noisy_regions(i2)
         h,s,v = cv2.split(img)

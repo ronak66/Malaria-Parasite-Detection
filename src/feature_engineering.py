@@ -9,7 +9,10 @@ class FeatureEngineering:
         self.PP = PreProcessing()
 
     def find_contours_and_centers(self,img_input):
-        img, contours_raw, hierarchy = cv2.findContours(img_input, cv2.RETR_TREE,cv2.CHAIN_APPROX_SIMPLE)
+        try:
+            img, contours_raw, hierarchy = cv2.findContours(img_input, cv2.RETR_TREE,cv2.CHAIN_APPROX_SIMPLE)
+        except:
+            contours_raw, hierarchy = cv2.findContours(img_input, cv2.RETR_TREE,cv2.CHAIN_APPROX_SIMPLE)
         contours = [i for i in contours_raw]
         contour_centers = []
         
